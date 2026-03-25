@@ -8,6 +8,7 @@ DS2 crashes on launch with `"Error initializing rendering configuration"` when r
 
 1. **`DXGI_FEATURE_PRESENT_ALLOW_TEARING`** — D3DMetal returns `0` (macOS handles vsync natively)
 2. **`D3D12_FEATURE_DATA_D3D12_OPTIONS2.DepthBoundsTestSupported`** — D3DMetal returns `FALSE`
+3. **`IDXGIOutput6::GetDesc1().ColorSpace`** - Returning SDR on compatible HDR displays
 
 Unlike Horizon Zero Dawn Remastered (same engine, works fine on D3DMetal), DS2 treats both as hard requirements with no fallback path — if either is missing, rendering init is aborted entirely.
 
